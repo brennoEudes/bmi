@@ -24,15 +24,35 @@
         <form action="">
           <div class="input-wrapper">
             <label for="weight">Weight (kg)</label>
-            <input id="weight" type="text" />
+            <input id="weight" type="text" placeholder="60" />
           </div>
 
           <div class="input-wrapper">
             <label for="height">Height (m)</label>
-            <input id="height" type="text" />
+            <input id="height" type="text" placeholder="1.65" />
           </div>
 
-          <button>Calculate BMI</button>
+          <button type="submit">
+            Calculate BMI
+            <img src="./assets/arrow.svg" alt="Arrow right white">
+            <!-- Pode-se tb colocar o svg direto no html, para situações em q ocorra estilizações via CSS
+            <svg
+              width="17"
+              height="16"
+              viewBox="0 0 17 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.1685 8.26205L14.3589 8.26213M14.3589 8.26213L9.64488 3.54808M14.3589 8.26213L9.64488 12.9762"
+                stroke="white"
+                stroke-width="1.20972"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg> -->
+          </button>
+          <!--Btns dentro de form sempre são tipo submit.-->
         </form>
       </main>
     </div>
