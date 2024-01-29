@@ -15,11 +15,12 @@
   --tt-input: #212529;
   --ot-input: #02799d; /* ot é abreviação de outline */
   --bd-input: rgba(73, 80, 87, 0.3); /* bd é abreviação de outline */
+  --bg-input: #dce2e9;
   --tt-placeholder: rgba(73, 80, 87, 0.5);
 
   --tt-button: #fff;
   --bg-button: #02799d;
-  
+
   --bg-error: #f03e3e;
   --tt-error: #fff;
 }
@@ -45,7 +46,48 @@ body {
   margin-inline: auto; /* Centraliza horizontalmente! */
 }
 
-h1 {
+.title {
+  color: var(--tt-heading);
   font-size: 3.2rem;
   font-weight: 700;
+  line-height: 4rem;
+}
+
+form label {
+  color: var(--tt-label);
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+
+  /* obs: label é inline e não aceita margin. Precisamos alterar p/ display block! */
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+form h1 {
+  margin-bottom: 3.2rem;
+}
+
+form input {
+  color: var(--tt-input);
+  width: 100%;
+
+  border: 1px solid var(--bd-input);
+  background-color: var(--bg-input);
+  border-radius: 0.4rem;
+
+  padding: 1.6rem;
+}
+
+/* Foco quando clicamos no input! (Padrão é 2px)*/
+form input:focus {
+  outline: 2px solid var(--ot-input);
+}
+
+form input::placeholder {
+  color: var(--tt-placeholder);
+}
+
+.input-wrapper + .input-wrapper {
+  /* input wrapper precedido por um input-wrapper */
+  margin-top: 1.6rem;
 }
