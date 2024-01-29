@@ -106,7 +106,7 @@ form input::placeholder {
   margin-top: 1.6rem;
 }
 
-button {
+form button {
   margin-top: 3.2rem;
   padding: 1.6rem;
   width: 100%;
@@ -128,6 +128,47 @@ button {
   transition: background .3s;
 }
 
-button:hover {
+form button:hover {
   background-color: var(--bg-button-hover);
+}
+
+/* MODAL */
+.modal-wrapper {
+    position: absolute;
+    inset: 0;
+
+    /* As 4 props abaixo podem ser trocadas pelo inset!*/
+    /* top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; */
+
+    background: rgba(0, 0, 0, 0.70);
+
+    display: grid;
+    place-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal {
+    position: relative; /* Cria a referência para os elementos dentro do modal (ex: modal button) */
+}
+
+.modal button {
+    background: none;
+    border: none;
+
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+
+    cursor: pointer;
+
+    transition: transform .3s; /* Transição somente no transform! */
+}
+
+.modal button:hover{
+    transform: scale(1.2); /* Aumenta o tamanho ao cursos passar por cima. */
 }
