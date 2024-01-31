@@ -17,6 +17,7 @@
     <!--Defer é uma props booleana que condiciona a leitura do script JS após o carregamento de todo o body! -->
   </head>
   <body>
+    <div class="alert-error open">Only numbers accepted</div>
     <div class="container">
       <!--Como temos diversos elementos além da main, criamos uma caixa ao redor da main p/ garantir que ela esteja sempre centralizada na vp! Se colocamos essas props direto no body, ao criar novos elementos, impactamos no alinhamento da main!-->
       <main class="card">
@@ -60,12 +61,12 @@
 
     <!--Pensar em uma caixa que ocupe toda a viewport e que contenha um modal!-->
     <div class="modal-wrapper">
-        <div class="modal card">
-            <button class="close">
-                <img src="./assets/close-icon.svg" alt="Close modal icon">
-            </button>
-            <h2 class="title">`Your BMI is ${X}.`</h2>
-        </div>
+      <div class="modal card">
+        <button class="close">
+          <img src="./assets/close-icon.svg" alt="Close modal icon" />
+        </button>
+        <h2 class="title">`Your BMI is ${X}.`</h2>
+      </div>
     </div>
   </body>
 </html>
