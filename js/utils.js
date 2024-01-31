@@ -4,6 +4,6 @@ export function notANumber(value) {
 }
 
 // fcn faz o cálculo do IMC:
-export function BMI(weight, height) {
+export function calculateBMI(weight, height) {
   return (weight / height ** 2).toFixed(2);
 }

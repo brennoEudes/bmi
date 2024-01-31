@@ -1,6 +1,6 @@
 import { Modal } from "./modal.js";
-import {AlertError} from "./alert-error.js"
-import { BMI, notANumber } from "./utils.js";
+import { AlertError } from "./alert-error.js";
+import { calculateBMI, notANumber } from "./utils.js";
 
 // 1º Mapear as variáveis:
 const form = document.querySelector("form");
@@ -19,21 +19,17 @@ form.onsubmit = function (event) {
   const weight = inputWeight.value;
   const height = inputHeight.value;
 
-  const showAlertError = notANumber(weight) || notANumber(height); // se weight e height não forem nº ou se forem vazio, serão verdadeiro. 
+  const weightOrHeightIsNotANumber = notANumber(weight) || notANumber(height); // se weight e height não forem nº ou se forem vazio, serão verdadeiro.
 
-  if (showAlertError) {
+  if (weightOrHeightIsNotANumber) {
     AlertError.open();
     return;
   }
 
   AlertError.close(); // fecha após inserção dos inputs corretamente.
 
-  const result = BMI(weight, height);
-  const message = `Your BMI is ${result}.`;
-  //console.log(result);
-
-  Modal.message.innerHTML = message;
-  Modal.open();
+  const result = calculateBMI(weight, height);
+  DisplayResultMessage(result);
 };
 
 // b) Arrow function:
@@ -43,3 +39,10 @@ form.onsubmit = function (event) {
 //form.onsubmit = handleSubmit
 //function handleSubmit() {}
 
+function DisplayResultMessage(result) {
+  const message = `Your BMI is ${result}.`;
+  //console.log(result);
+
+  Modal.message.innerHTML = message;
+  Modal.open();
+}
