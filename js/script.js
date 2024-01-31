@@ -1,4 +1,5 @@
 import { Modal } from "./modal.js";
+import {AlertError} from "./alert-error.js"
 
 // 1º Mapear as variáveis:
 const form = document.querySelector("form");
@@ -20,9 +21,11 @@ form.onsubmit = function (event) {
   const showAlertError = notANumber(weight) || notANumber(height); // se weight e height não forem nº ou se forem vazio, serão verdadeiro. 
 
   if (showAlertError) {
-    console.log("Mostrar alerta de erro!")
+    AlertError.open();
     return;
   }
+
+  AlertError.close(); // fecha após inserção dos inputs corretamente.
 
   const result = BMI(weight, height);
   const message = `Your BMI is ${result}.`;
