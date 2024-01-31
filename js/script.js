@@ -1,24 +1,9 @@
+import { Modal } from "./modal.js";
+
 // 1º Mapear as variáveis:
 const form = document.querySelector("form");
 const inputWeight = document.querySelector("#weight");
 const inputHeight = document.querySelector("#height");
-
-// OBJECT LITERAL: objeto responsável por orquestrar as funcionalidades.
-// É uma estrutura de dados c/ responsabilidades divididas.
-const Modal = {
-  wrapper: document.querySelector(".modal-wrapper"),
-  message: document.querySelector(".modal .title span"),
-  btnClose: document.querySelector(".modal button.close"),
-
-  // Shorthand de fcn disponível a partir do JS ES6:
-  // O formato abaixo é a msm coisa que open: function () {...alguma coisa}
-  open() {
-    Modal.wrapper.classList.add("open");
-  },
-  close() {
-    Modal.wrapper.classList.remove("open");
-  },
-};
 
 // 3 maneiras de criar e atribuir função a um evento:
 // OBS: O método ON acessa diversas funcionalidades na DOM:
@@ -49,7 +34,6 @@ form.onsubmit = function (event) {
 //form.onsubmit = handleSubmit
 //function handleSubmit() {}
 
-Modal.btnClose.onclick = () => Modal.close(); // Arrow fcn c/ 1 linha, podemos tirar as chaves!
 
 // fcn faz o cálculo do IMC:
 function BMI(weight, height) {
