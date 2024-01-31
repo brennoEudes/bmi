@@ -169,6 +169,14 @@ form button:hover {
     transition: transform .3s; /* Transição somente no transform! */
 }
 
+/* Quando receber a class open: */
+.modal-wrapper.open{
+  visibility: visible;
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
 .modal button:hover{
     transform: scale(1.2); /* Aumenta o tamanho ao cursos passar por cima. */
 }
