@@ -17,6 +17,7 @@ export const Modal = {
 
 Modal.btnClose.onclick = () => Modal.close(); // Arrow fcn c/ 1 linha, podemos tirar as chaves!
 
+// Evento fechar btn:
 window.addEventListener("keydown", handleKeyDown);
 function handleKeyDown(event) {
   if (event.key === "Escape") {

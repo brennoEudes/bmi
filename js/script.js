@@ -17,7 +17,12 @@ form.onsubmit = function (event) {
   const weight = inputWeight.value;
   const height = inputHeight.value;
 
-  // console.log(weight, height);
+  const showAlertError = notANumber(weight) || notANumber(height); // se weight e height não forem nº ou se forem vazio, serão verdadeiro. 
+
+  if (showAlertError) {
+    console.log("Mostrar alerta de erro!")
+    return;
+  }
 
   const result = BMI(weight, height);
   const message = `Your BMI is ${result}.`;
@@ -34,6 +39,11 @@ form.onsubmit = function (event) {
 //form.onsubmit = handleSubmit
 //function handleSubmit() {}
 
+
+// Checagem booleana se o input NÃO é nº ou se é vazio:
+function notANumber (value) {
+  return isNaN(value) || value === "";
+}
 
 // fcn faz o cálculo do IMC:
 function BMI(weight, height) {
