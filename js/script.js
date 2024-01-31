@@ -1,5 +1,6 @@
 import { Modal } from "./modal.js";
 import {AlertError} from "./alert-error.js"
+import { BMI, notANumber } from "./utils.js";
 
 // 1º Mapear as variáveis:
 const form = document.querySelector("form");
@@ -42,13 +43,3 @@ form.onsubmit = function (event) {
 //form.onsubmit = handleSubmit
 //function handleSubmit() {}
 
-
-// Checagem booleana se o input NÃO é nº ou se é vazio:
-function notANumber (value) {
-  return isNaN(value) || value === "";
-}
-
-// fcn faz o cálculo do IMC:
-function BMI(weight, height) {
-  return (weight / height ** 2).toFixed(2);
-}
