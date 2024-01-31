@@ -3,14 +3,27 @@ const form = document.querySelector("form");
 const inputWeight = document.querySelector("#weight");
 const inputHeight = document.querySelector("#height");
 
-const modalWrapper = document.querySelector(".modal-wrapper");
-const modalMessage = document.querySelector(".modal .title span");
-const modalBtnClose = document.querySelector(".modal button.close");
+// OBJECT LITERAL: objeto responsável por orquestrar as funcionalidades.
+// É uma estrutura de dados c/ responsabilidades divididas.
+const Modal = {
+  wrapper: document.querySelector(".modal-wrapper"),
+  message: document.querySelector(".modal .title span"),
+  btnClose: document.querySelector(".modal button.close"),
+
+  // Shorthand de fcn disponível a partir do JS ES6:
+  // O formato abaixo é a msm coisa que open: function () {...alguma coisa}
+  open() {
+    Modal.wrapper.classList.add("open");
+  },
+  close() {
+    Modal.wrapper.classList.remove("open");
+  },
+};
 
 // 3 maneiras de criar e atribuir função a um evento:
 // OBS: O método ON acessa diversas funcionalidades na DOM:
 
-// 1º Atribuir uma fcn diretamente
+// a) Atribuir uma fcn diretamente
 form.onsubmit = function (event) {
   // Evita o comportamente padrão do form (enviar form e carregar pág):
   event.preventDefault();
@@ -25,18 +38,18 @@ form.onsubmit = function (event) {
   const message = `Your BMI is ${result}.`;
   //console.log(result);
 
-  modalWrapper.classList.add("open");
-  modalMessage.innerHTML = message;
+  Modal.message.innerHTML = message;
+  Modal.open();
 };
 
-// 2º Arrow function:
+// b) Arrow function:
 // form.onsubmit = () => {}
 
-// 3º Criando uma fcn e passar o nome como referência:
+// c) Criando uma fcn e passar o nome como referência:
 //form.onsubmit = handleSubmit
 //function handleSubmit() {}
 
-modalBtnClose.onclick = () => modalWrapper.classList.remove("open"); // Arrow fcn c/ 1 linha, podemos tirar as chaves!
+Modal.btnClose.onclick = () => Modal.close(); // Arrow fcn c/ 1 linha, podemos tirar as chaves!
 
 // fcn faz o cálculo do IMC:
 function BMI(weight, height) {
