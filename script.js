@@ -7,7 +7,6 @@ const modalWrapper = document.querySelector(".modal-wrapper");
 const modalMessage = document.querySelector(".modal .title span");
 const modalBtnClose = document.querySelector(".modal button.close");
 
-
 // 3 maneiras de criar e atribuir função a um evento:
 // OBS: O método ON acessa diversas funcionalidades na DOM:
 
@@ -23,7 +22,7 @@ form.onsubmit = function (event) {
   // console.log(weight, height);
 
   const result = BMI(weight, height);
-  const message = `Your BMI is ${result}.`
+  const message = `Your BMI is ${result}.`;
   //console.log(result);
 
   modalWrapper.classList.add("open");
@@ -36,6 +35,8 @@ form.onsubmit = function (event) {
 // 3º Criando uma fcn e passar o nome como referência:
 //form.onsubmit = handleSubmit
 //function handleSubmit() {}
+
+modalBtnClose.onclick = () => modalWrapper.classList.remove("open"); // Arrow fcn c/ 1 linha, podemos tirar as chaves!
 
 // fcn faz o cálculo do IMC:
 function BMI(weight, height) {
