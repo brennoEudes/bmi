@@ -26,7 +26,7 @@ form.onsubmit = function (event) {
     return;
   }
 
-  AlertError.close(); // fecha após inserção dos inputs corretamente.
+  //AlertError.close(); // fecha após inserção dos inputs corretamente.
 
   const result = calculateBMI(weight, height);
   DisplayResultMessage(result);
@@ -39,6 +39,11 @@ form.onsubmit = function (event) {
 //form.onsubmit = handleSubmit
 //function handleSubmit() {}
 
+// Fecha janela de erro após digitação nos campos:
+// o método "oninput" verifica se o elemento que está recebendo input sofreu alteração
+inputWeight.oninput = () => AlertError.close();
+inputHeight.oninput = () => AlertError.close();
+
 function DisplayResultMessage(result) {
   const message = `Your BMI is ${result}.`;
   //console.log(result);
@@ -46,3 +51,5 @@ function DisplayResultMessage(result) {
   Modal.message.innerHTML = message;
   Modal.open();
 }
+
+
