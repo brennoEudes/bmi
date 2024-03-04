@@ -49,9 +49,9 @@ button {
 h1 {
   font-size: 3.6rem;
   color: var(--tt-error);
-  padding: 5rem;
+  padding: 0 1.6rem 5.6rem;
   text-align: center;
-  line-height: 4rem;
+  line-height: 5.6rem;
 }
 
 .card {
@@ -62,6 +62,8 @@ h1 {
   padding: 4.8rem 6.4rem 6.4rem;
   max-width: 42.8rem;
   margin-inline: auto; /* Centraliza horizontalmente! */
+
+  animation: appear 1s; /* As img já comecam do ponto menor e depois aumentam*/
 }
 
 .title {
@@ -224,4 +226,16 @@ form button:hover {
   opacity: 1;
 
   transform: translateY(0);
+}
+
+/* ANIMATIONS */
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
 }
