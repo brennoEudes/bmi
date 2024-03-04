@@ -46,6 +46,14 @@ button {
   padding: 24rem;
 }
 
+h1 {
+  font-size: 3.6rem;
+  color: var(--tt-error);
+  padding: 5rem;
+  text-align: center;
+  line-height: 4rem;
+}
+
 .card {
   border-radius: 0.6rem;
   background: #fff;
@@ -64,7 +72,19 @@ button {
 }
 
 form {
-    width: 30rem;
+  width: 30rem;
+}
+
+.form-header {
+  display: flex;
+  margin-bottom: 3.2rem;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.form-header img {
+  max-width: 3.2rem;
+  height: 100%;
 }
 
 form label {
@@ -75,10 +95,6 @@ form label {
   /* obs: label é inline e não aceita margin. Precisamos alterar p/ display block! */
   display: block;
   margin-bottom: 0.8rem;
-}
-
-form h1 {
-  margin-bottom: 3.2rem;
 }
 
 form input {
@@ -125,7 +141,7 @@ form button {
 
   cursor: pointer;
 
-  transition: background .3s;
+  transition: background 0.3s;
 }
 
 form button:hover {
@@ -134,51 +150,51 @@ form button:hover {
 
 /* MODAL */
 .modal-wrapper {
-    position: absolute;
-    inset: 0;
+  position: absolute;
+  inset: 0;
 
-    /* As 4 props abaixo podem ser trocadas pelo inset!*/
-    /* top: 0;
+  /* As 4 props abaixo podem ser trocadas pelo inset!*/
+  /* top: 0;
     bottom: 0;
     left: 0;
     right: 0; */
 
-    background: rgba(0, 0, 0, 0.70);
+  background: rgba(0, 0, 0, 0.7);
 
-    display: grid;
-    place-content: center;
+  display: grid;
+  place-content: center;
 
-    opacity: 0;
-    visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .modal {
-    position: relative; /* Cria a referência para os elementos dentro do modal (ex: modal button) */
+  position: relative; /* Cria a referência para os elementos dentro do modal (ex: modal button) */
 }
 
 .modal button {
-    background: none;
-    border: none;
+  background: none;
+  border: none;
 
-    position: absolute;
-    top: 1.6rem;
-    right: 1.6rem;
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    transition: transform .3s; /* Transição somente no transform! */
+  transition: transform 0.3s; /* Transição somente no transform! */
 }
 
 /* Quando receber a class open: */
-.modal-wrapper.open{
+.modal-wrapper.open {
   visibility: visible;
   opacity: 1;
 
   transform: translateY(0);
 }
 
-.modal button:hover{
-    transform: scale(1.2); /* Aumenta o tamanho ao cursos passar por cima. */
+.modal button:hover {
+  transform: scale(1.2); /* Aumenta o tamanho ao cursos passar por cima. */
 }
 
 /* ALERT ERROR */
@@ -193,17 +209,17 @@ form button:hover {
   color: var(--tt-error);
   font-weight: bold;
 
-  padding: .8rem 0;
+  padding: 0.8rem 0;
 
   visibility: hidden;
   opacity: 0;
 
   transform: translateY(-30px);
-  transition: transform .5s;
+  transition: transform 0.5s;
 }
 
 /* Quando receber a class open: */
-.alert-error.open{
+.alert-error.open {
   visibility: visible;
   opacity: 1;
 
