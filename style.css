@@ -63,7 +63,7 @@ h1 {
   max-width: 42.8rem;
   margin-inline: auto; /* Centraliza horizontalmente! */
 
-  animation: appear 1s; /* As img já comecam do ponto menor e depois aumentam*/
+  animation: appear 2s; /* As img já comecam do ponto menor e depois aumentam*/
 }
 
 .title {
@@ -195,8 +195,21 @@ form button:hover {
   transform: translateY(0);
 }
 
+.modal span {
+  font-size: 3rem;
+}
+
 .modal button:hover {
   transform: scale(1.2); /* Aumenta o tamanho ao cursos passar por cima. */
+}
+
+.modal p {
+  font-size: 1.2rem;
+  color: var(--tt-placeholder);
+  text-align: center;
+  line-height: 1.6rem;
+
+  padding-top: 3.6rem;
 }
 
 /* ALERT ERROR */
